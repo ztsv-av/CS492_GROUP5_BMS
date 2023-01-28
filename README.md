@@ -16,5 +16,5 @@ The project is running on Django (Python library). You will need to start it on 
 6. Open up your browser and type the following address: localhost:8000
 7. This should show you the whole bookstore project and display any changes that you make to the files.
 
-If you are not sure how to set up the virtual enviroment or how to work with django, you can follow this tutorial: https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=1
+If you are not sure how to set up the virtual enviroment or how to work with Django, you can follow this tutorial: https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=1
 
