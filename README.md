@@ -7,7 +7,7 @@ The project is running on Django (Python library). You will need to start it on 
 1. Download files from this Github repository.
 2. Create a folder on your computer wherever you want and name it whatever you want.
 3. Make sure that you have Python on your computer and it is added to the PATH.
-3. Open CMD, go to the folder 'bookstore' folder and activate the virtual environment by typing: .virt\Scripts\activate
+3. Open CMD, go to the folder 'bookstore' folder and activate the virtual environment by typing: virt\Scripts\activate
 4. Go to the next bookstore folder (bookstore/bookstore) and run the local server by typing: python manage.py runsever
 5. The server should be up and running (make sure that there are no errors in the CMD).
 6. Open up your browser and type the following address: localhost:8000
