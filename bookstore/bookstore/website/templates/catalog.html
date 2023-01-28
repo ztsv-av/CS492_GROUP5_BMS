@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+
+{% include 'base/navbar.html' %}
+
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">			
+				<div class="colored">
+					<h1 class="page-title">Catalog</h1>
+					<div class="breadcum-items">
+						<span class="item"><a href="{% url 'index' %}">Home /</a></span>
+						<span class="item colored">Catalog</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% include 'elements/catalog_list.html' %}
+
+
+{% include 'base/footer.html' %}
+
+</body>
+</html>	

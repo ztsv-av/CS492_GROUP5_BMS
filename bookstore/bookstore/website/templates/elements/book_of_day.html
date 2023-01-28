@@ -1,0 +1,25 @@
+{% load static %}
+
+<section id="billboard">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div style="margin-top:100px" class="section-header align-center">
+					<h2 class="section-title">Book of the Day</h2>
+				</div>
+				<div style="margin-top:-50px" class="main-slider pattern-overlay">
+					<div class="slider-item">
+						<div class="banner-content">
+							<h2 class="banner-title">{{book_of_day.title}}</h2>
+							<p>{{book_of_day.description}}</p>
+							<div class="btn-wrap">
+								<a href="{% url 'single' %}" class="btn btn-outline-accent btn-accent-arrow">Read More<i class="icon icon-ns-arrow-right"></i></a>
+							</div>
+						</div>
+						<img src="{{book_of_day.image}}" alt="book_of_the_day" height="60%" width="30%">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
