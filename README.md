@@ -16,7 +16,7 @@ The project is running on Django (Python library). You will need to start it on 
 7. This should show you the whole bookstore project and display any changes that you make to the files.
 8. Once you are ready to push the changes to the repository, first - stage the change, second - write a small change description and commit the change, third - push the change to the repository.
 
-**NOTE: before pushing any changes to the repository, make sure that your files are up to date. Sometimes people might push changes before you, so your code becomes outdated.**
+**NOTE: before pushing any changes to the repository, make sure that your files are up to date. Sometimes people might push changes before you, so your code becomes outdated. use *git pull* to pull all the changes to your local machine.**
 
 If you are not sure how to set up the virtual enviroment or how to work with Django, you can follow this tutorial: https://www.youtube.com/watch?v=HHx3tTQWUx0&list=PLCC34OHNcOtqW9BJmgQPPzUpJ8hl49AGy&index=1
 
