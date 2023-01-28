@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+
+{% include 'base/navbar.html' %}
+	
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="page-title">Checkout</h1>
+				<div class="breadcrumbs">
+					<span class="item"><a href="{% url 'index' %}">Home /</a></span>
+					<span class="item">Checkout</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="contact-information padding-large mt-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 p-0 mb-3">
+							
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+
+<!-- ----------------------------------------------------------------
+Customer information
+---------------------------------------------------------------- -->
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname">
+			<label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip">
+              </div>
+            </div>
+          </div>
+
+<!-- ----------------------------------------------------------------
+Payment information
+---------------------------------------------------------------- -->
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+		
+			
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="###">
+              </div>
+            </div>
+          </div>
+
+<!-- ----------------------------------------------------------------
+Continue to Checkout Button
+---------------------------------------------------------------- -->
+          
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <input type="submit" value="Continue to checkout" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+				
+				
+				
+				
+				
+			<!-- 	<h2>Get in Touch</h2> -->
+
+				<!-- <div class="contact-detail d-flex flex-wrap mt-4">
+					<div class="detail mr-6 mb-4">
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<ul class="list-unstyled list-icon">
+							<li><i class="icon icon-phone"></i>1-855-230-0555</li>
+							<li><i class="icon icon-envelope-o"></i><a href="mailto:info@yourcompany.com">CTUCareerServices@coloradotech.edu</a></li>
+							<li><i class="icon icon-location2"></i>1575 Garden of the Gods Rd Suite 100, Colorado Springs, CO 80907</li>
+						</ul>
+					</div>
+					
+
+				</div>
+			</div>
+
+			<div class="col-md-6 p-0">
+				
+				<div class="contact-information">
+					<h2>Send A Message</h2>
+					<form name="contactform" action="contact.php" method="post" class="contact-form d-flex flex-wrap mt-4">
+						<div class="row">
+					    	<div class="col-md-6">
+								<input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width" required>
+							</div>
+							<div class="col-md-6">
+								<input type="email" name="email" placeholder="E-mail" class="u-full-width" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+
+								<textarea class="u-full-width" name="message" placeholder="Message" style="height: 150px;" required></textarea>
+
+								<label>
+								    <input type="checkbox" required>
+								    <span class="label-body">I agree all the <a href="#">terms and conditions</a></span>
+								</label>
+
+								<button type="submit" name="submit" class="btn btn-full btn-rounded">Submit</button>
+							</div>
+						</div>
+					</form>
+
+				</div> -->
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'base/footer.html' %}
+
+</body>
+</html>	
