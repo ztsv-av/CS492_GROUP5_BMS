@@ -44,3 +44,12 @@ def single(request):
         'single_book.html',
         {"book_list": book_list}
     )
+
+
+def checkout(request):
+
+    return render(
+        request,
+        'checkout.html',
+        {}
+    )
