@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+
+{% include 'base/navbar.html' %}
+	
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="page-title">Contact us</h1>
+				<div class="breadcrumbs">
+					<span class="item"><a href="{% url 'index' %}">Home /</a></span>
+					<span class="item">Contact us</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include 'elements/contact_us.html' %}
+
+{% include 'elements/map.html' %}
+
+
+{% include 'base/footer.html' %}
+
+</body>
+</html>	
