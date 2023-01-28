@@ -7,10 +7,10 @@ The project is running on Django (Python library). You will need to start it on 
 1. Download folder from this Github repository on your computer.
 2. Make sure that you have Python on your computer and it is added to the PATH.
 3. Open CMD, go to the 'bookstore' folder (that you downloaded) and activate the virtual environment by following these 4 steps: 
-  1. type: python -m venv virt
-  2. type: virt\Scripts\activate
-  3. type: pip install django
-  4. type: pip install Pillow
+  i. type: python -m venv virt
+  ii. type: virt\Scripts\activate
+  iii. type: pip install django
+  iv. type: pip install Pillow
 4. Next, go to the next bookstore folder (bookstore/bookstore) and run the local server by typing: python manage.py runsever
 5. The server should be up and running (make sure that there are no errors in the CMD).
 6. Open up your browser and type the following address: localhost:8000
