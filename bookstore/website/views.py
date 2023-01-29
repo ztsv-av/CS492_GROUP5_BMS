@@ -20,10 +20,13 @@ def index(request):
 
 def catalog(request):
 
+    catalog = list(Book.objects.all())
+    random.shuffle(catalog)
+
     return render(
         request,
         'catalog.html',
-        {}
+        {'catalog': catalog}
     )
 
 
@@ -57,9 +60,11 @@ def checkout(request):
     )
 
 def search(request):
+
     query = request.GET.get('q')
     if query:
         books = Book.objects.filter(name__icontains=query)
     else:
         books = Book.objects.all()
+        
     return render(request, 'catalog.html', {'books': books})
