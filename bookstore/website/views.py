@@ -53,3 +53,11 @@ def checkout(request):
         'checkout.html',
         {}
     )
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        books = Book.objects.filter(name__icontains=query)
+    else:
+        books = Book.objects.all()
+    return render(request, 'catalog.html', {'books': books})

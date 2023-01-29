@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+
+{% include 'base/navbar.html' %}
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">            
+                <div class="colored">
+                    <h1 class="page-title">Search Results</h1>
+                    <div class="breadcum-items">
+                        <span class="item"><a href="{% url 'index' %}">Home /</a></span>
+                        <span class="item colored">Search Results</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <form method="GET" action="{% url 'search' %}">
+        <input type="text" name="q" placeholder="Search for a book...">
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+{% if books %}
+    <div class="container">
+        <div class="row">
+            {% for book in books %}
+                <div class="col-md-4">
+                    <div class="book-card">
+                        <img src="{{ book.cover.url }}" alt="{{ book.name }}">
+                        <h2>{{ book.name }}</h2>
+                        <p>{{ book.author }}</p>
+                        <a href="{% url 'single' book.id %}">View Details</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="container">
+        <p>No books found matching your search.</p>
+    </div>
+{% endif %}
+
+{% include 'base/footer.html' %}
+
+</body>
+</html>
