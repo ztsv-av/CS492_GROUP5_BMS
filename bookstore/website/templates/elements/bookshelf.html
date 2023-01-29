@@ -1,5 +1,32 @@
 {% load static %}
 
+<style>
+.tab-content>.tab-pane {
+    display: none;
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+.nav-pills .nav-link {
+    background: none;
+    border: 0;
+    border-radius: 0.25rem;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #C5A992;
+}
+
+.nav-pills .nav-link:hover {
+	background-color: #c5a99246;
+}
+.nav-pills .nav-link.disabled {
+  background-color: transparent;
+}
+</style>
+
 <section id="popular-books" class="bookshelf">
 	<div class="container">
 	<div class="row">
@@ -9,245 +36,338 @@
 				<h2 class="section-title">Recommended Books</h2>
 			</div>
    
-			<ul class="tabs">
-			  <li data-tab-target="#all-genre" class="active tab">All Genre</li>
-			  <li data-tab-target="#business" class="tab">Business</li>
-			  <li data-tab-target="#technology" class="tab">Technology</li>
-			  <li data-tab-target="#romantic" class="tab">Romantic</li>
-			  <li data-tab-target="#adventure" class="tab">Adventure</li>
-			  <li data-tab-target="#fictional" class="tab">Fictional</li>
+			<ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0 active" id="all-genre-tab" data-bs-toggle="tab" href="#all-genre" role="tab" aria-controls="all-genre" aria-selected="true">All Genre</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0" id="fantasy-tab" data-bs-toggle="tab" href="#fantasy" role="tab" aria-controls="fantasy" aria-selected="false">Fantasy</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0" id="technology-tab" data-bs-toggle="tab" href="#technology" role="tab" aria-controls="technology" aria-selected="false">Technology</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0" id="romantic-tab" data-bs-toggle="tab" href="#romantic" role="tab" aria-controls="romantic" aria-selected="false">Romantic</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0" id="adventure-tab" data-bs-toggle="tab" href="#adventure" role="tab" aria-controls="adventure" aria-selected="false">Adventure</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mb-sm-3 mb-md-0" id="fiction-tab" data-bs-toggle="tab" href="#fiction" role="tab" aria-controls="fiction" aria-selected="false">Fiction</a>
+				</li>
 			</ul>
 
-			<div class="tab-content">
-			  <div id="all-genre" data-tab-content class="active">
-			  	<div class="row">
+			<br>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>The Witcher: Baptism of Fire</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+			<div class="tab-content" id="tabcontent1">
+
+				<div class="tab-pane fade show active" id="all-genre" role="tabpanel" aria-labelledby="all-genre-tab">
+					
+					<div class="row">
+
+						{% for book in catalog|slice:"0:4" %}
+
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
+
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Once upon a time</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 35.00</div>
-							</figcaption>
-						</figure>
-					</div>
+					<div class="row">
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Tips of simple lifestyle</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
-					</div>
+						{% for book in catalog|slice:"4:8" %}
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Just felt from outside</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
+
+						{% endfor %}
+
 					</div>
 
 				</div>
-				<div class="row">
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Peaceful Enlightment</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+				<div class="tab-pane fade" id="fantasy" role="tabpanel" aria-labelledby="fantasy-tab">
+					
+					<div class="row">
+
+						{% for book in catalog|slice:"4:8" %}
+
+							{% if 'fantasy' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Great travel at desert</h3>
-								<p>Andrzej Sapkowskiy</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+					<div class="row">
+
+						{% for book in catalog|slice:"0:4" %}
+
+							{% if 'fantasy' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Life among the pirates</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+				</div>
+
+				<div class="tab-pane fade" id="technology" role="tabpanel" aria-labelledby="technology-tab">
+					
+					<div class="row">
+
+						{% for book in catalog|slice:"0:4" %}
+
+							{% if 'technology' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Simple way of piece life</h3>
-								<p>Andrzej Sapkowski</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+					<div class="row">
+
+						{% for book in catalog|slice:"4:8" %}
+
+							{% if 'technology' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-		    	</div>
+				</div>
 
-			  </div>
-			  <div id="business" data-tab-content>
-			  	<div class="row">
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Peaceful Enlightment</h3>
-								<p>Marmik Lama</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+				<div class="tab-pane fade" id="romantic" role="tabpanel" aria-labelledby="romantic-tab">
+					
+					<div class="row">
+
+						{% for book in catalog|slice:"4:8" %}
+
+							{% if 'romantic' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Great travel at desert</h3>
-								<p>Sanchit Howdy</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+					<div class="row">
+
+						{% for book in catalog|slice:"0:4" %}
+
+							{% if 'romantic' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Life among the pirates</h3>
-								<p>Armor Ramsey</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+				</div>
+
+				<div class="tab-pane fade" id="adventure" role="tabpanel" aria-labelledby="adventure-tab">
+					
+					<div class="row">
+
+						{% for book in catalog|slice:"0:4" %}
+
+							{% if 'adventure' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-				  	<div class="col-md-3">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Simple way of piece life</h3>
-								<p>Armor Ramsey</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+					<div class="row">
+
+						{% for book in catalog|slice:"4:8" %}
+
+							{% if 'adventure' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-		    	 </div>
-			  </div>
+				</div>
 
-			  <div id="technology" data-tab-content>
+				<div class="tab-pane fade" id="fiction" role="tabpanel" aria-labelledby="fiction-tab">
 
-			  	<div class="row">
-				  	<div class="col-md-1">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Peaceful Enlightment</h3>
-								<p>Marmik Lama</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+					<div class="row">
+
+						{% for book in catalog|slice:"4:8" %}
+
+							{% if 'fiction' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-			  </div>
+					<div class="row">
 
-			  <div id="romantic" data-tab-content>
+						{% for book in catalog|slice:"0:4" %}
 
-			  	<div class="row">
-		    	  <div class="col-md-1">
-			    	  <figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Peaceful Enlightment</h3>
-								<p>Marmik Lama</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
+							{% if 'fiction' in book.genre %}
+
+								<div class="col-md-3">
+									<figure class="product-style">
+										<img src="{{book.image}}" alt="Books" class="product-item">
+										<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+										<figcaption>
+											<h3>{{book.title}}</h3>
+											<p>{{book.author}}</p>
+											<div class="item-price">$ {{book.price}}</div>
+										</figcaption>
+									</figure>
+								</div>
+
+							{% endif %}
+					
+						{% endfor %}
+
 					</div>
 
-			  </div>
-
-			  <div id="adventure" data-tab-content>
-
-			  	<div class="row">
-				  	<div class="col-md-1">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Life among the pirates</h3>
-								<p>Armor Ramsey</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
-					</div>
-
-			  </div>
-
-			  <div id="fictional" data-tab-content>
-
-			  	<div class="row">
-				  	<div class="col-md-1">
-					  	<figure class="product-style">
-							<img src="{% static 'images/tab-item1.jpg' %}" alt="Books" class="product-item">
-							<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
-							<figcaption>
-								<h3>Life among the pirates</h3>
-								<p>Armor Ramsey</p>
-								<div class="item-price">$ 40.00</div>
-							</figcaption>
-						</figure>
-					</div>
-		    	 </div>
-
-			  </div>
+				</div>
 
 			</div>
+
 		</div>
-		</div>
+	</div>
 	</div>
 </section>

@@ -5,6 +5,8 @@ from .models import Book
 def index(request):
 
     catalog = list(Book.objects.all())
+    random.shuffle(catalog)
+    
     book_of_day = random.choice(catalog)
 
     return render(

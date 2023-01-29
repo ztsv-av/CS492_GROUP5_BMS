@@ -1,5 +1,11 @@
 {% load static %}
 
+<style>
+.book_day{
+	border: 1px solid #EAE8DF;
+}
+</style>
+
 <section id="billboard">
 	<div class="container">
 		<div class="row">
@@ -16,7 +22,7 @@
 								<a href="{% url 'single' %}" class="btn btn-outline-accent btn-accent-arrow">Read More<i class="icon icon-ns-arrow-right"></i></a>
 							</div>
 						</div>
-						<img src="{{book_of_day.image}}" alt="book_of_the_day" height="60%" width="30%">
+						<img src="{{book_of_day.image}}" alt="book_of_the_day" height="60%" width="30%" style="padding: 3%; background: #EFEEE8; border: 1px solid #EAE8DF">
 					</div>
 				</div>
 			</div>

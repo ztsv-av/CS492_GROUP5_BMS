@@ -3,12 +3,15 @@
 
 {% include 'base/head.html' %}
 
-{% include 'base/navbar.html' %}
+<div id="header-wrap">
+    {% include 'base/navbar.html' %}
+    {% include 'base/header_home.html' %}
+</div>
 
 
 <body>
 
-<a href="{% url 'checkout' %}" class="nav-link" data-effect="Home">Checkout</a>
+<!-- <a href="{% url 'checkout' %}" class="nav-link" data-effect="Home">Checkout</a> -->
 
 {% include 'elements/book_of_day.html' %}
 
