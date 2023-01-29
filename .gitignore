@@ -2,3 +2,4 @@ virt/*
 bookstore/bookstore/__pycache__/*
 bookstore/website/migrations/__pycache__/*
 bookstore/website/__pycache__/*
+bookstore/db.sqlite3
