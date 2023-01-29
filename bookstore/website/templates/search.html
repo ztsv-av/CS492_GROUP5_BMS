@@ -3,7 +3,9 @@
 
 {% include 'base/head.html' %}
 
-{% include 'base/navbar.html' %}
+<div id="header-wrap">
+    {% include 'base/navbar.html' %}
+</div>
 
 <div>
     <div class="container">
@@ -29,20 +31,29 @@
 </div>
 
 {% if books %}
-    <div class="container">
-        <div class="row">
-            {% for book in books %}
-                <div class="col-md-4">
-                    <div class="book-card">
-                        <img src="{{ book.cover.url }}" alt="{{ book.name }}">
-                        <h2>{{ book.name }}</h2>
-                        <p>{{ book.author }}</p>
-                        <a href="{% url 'single' book.id %}">View Details</a>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
+<section class="padding-large">
+	<div class="container">
+		<div class="row">
+			<div class="products-grid grid">
+
+				{% for book in books %}
+
+					<figure class="product-style">
+						<img src="{{book.image}}" alt="Books" class="product-item">
+						<button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button>
+						<figcaption>
+							<h3>{{book.title}}</h3>
+							<p>{{book.author}}</p>
+							<div class="item-price">$ {{book.price}}</div>
+						</figcaption>
+					</figure>
+
+				{% endfor %}
+
+	    	</div>
+		</div>
+	</div>
+</section>
 {% else %}
     <div class="container">
         <p>No books found matching your search.</p>
