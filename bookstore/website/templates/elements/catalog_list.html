@@ -1,11 +1,27 @@
 {% load static %}
 
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+		{%if books.has_previous%}
+			<li class="page-item"><a href="?page=1" class="page-link">&laquo First</a></li>
+			<li class="page-item"><a href="?page={{books.previous_page_number}}" class="page-link">Previous</a></li>
+		{%endif%}
+
+		<li class="page-item disabled"><a href="#" class="page-link">Page {{books.number}} of {{books.paginator.num_pages}}</a></li>
+
+		{%if books.has_next%}
+			<li class="page-item"><a href="?page={{books.next_page_number}}" class="page-link">Next</a></li>
+			<li class="page-item"><a href="?page={{books.paginator.num_pages}}" class="page-link">Last &raquo</a></li>
+		{%endif%}
+	</ul>
+</nav>
+
 <section class="padding-large">
 	<div class="container">
 		<div class="row">
 			<div class="products-grid grid">
 
-				{% for book in catalog %}
+				{% for book in books %}
 
 					<figure class="product-style">
 						<img src="{{book.image}}" alt="Books" class="product-item">
@@ -23,3 +39,19 @@
 		</div>
 	</div>
 </section>
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+		{%if books.has_previous%}
+			<li class="page-item"><a href="?page=1" class="page-link">&laquo First</a></li>
+			<li class="page-item"><a href="?page={{books.previous_page_number}}" class="page-link">Previous</a></li>
+		{%endif%}
+
+		<li class="page-item disabled"><a href="#" class="page-link">Page {{books.number}} of {{books.paginator.num_pages}}</a></li>
+
+		{%if books.has_next%}
+			<li class="page-item"><a href="?page={{books.next_page_number}}" class="page-link">Next</a></li>
+			<li class="page-item"><a href="?page={{books.paginator.num_pages}}" class="page-link">Last &raquo</a></li>
+		{%endif%}
+	</ul>
+</nav>

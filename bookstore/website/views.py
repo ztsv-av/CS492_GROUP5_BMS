@@ -1,6 +1,7 @@
 import random
 from django.shortcuts import render
 from .models import Book
+from django.core.paginator import Paginator
 
 def index(request):
 
@@ -19,14 +20,19 @@ def index(request):
 
 
 def catalog(request):
-
-    catalog = list(Book.objects.all())
-    random.shuffle(catalog)
+    
+    # Set up Pagination
+    p = Paginator(Book.objects.all(), 3)
+    page = request.GET.get('page')
+    books = p.get_page(page)
 
     return render(
         request,
         'catalog.html',
-        {'catalog': catalog}
+        {
+            'catalog': catalog,
+            'books': books
+        }
     )
 
 
