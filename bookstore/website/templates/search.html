@@ -23,10 +23,10 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="search-container">
     <form method="GET" action="{% url 'search' %}">
-        <input type="text" name="q" placeholder="Search for a book...">
-        <input type="submit" value="Search">
+        <input type="text" name="q" placeholder="Search for a book..." id="search-field">
+        <input type="submit" value="search" id="search-button">
     </form>
 </div>
 

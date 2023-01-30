@@ -1241,6 +1241,33 @@ img.post-image {
     margin-right: 40px;
 } 
 
+/* Bookshelf */
+
+.tab-content>.tab-pane {
+  display: none;
+}
+
+.tab-content>.active {
+  display: block;
+}
+
+.nav-pills .nav-link {
+  background: none;
+  border: 0;
+  border-radius: 0.25rem;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #C5A992;
+}
+
+.nav-pills .nav-link:hover {
+background-color: #c5a99246;
+}
+.nav-pills .nav-link.disabled {
+background-color: transparent;
+}
+
 /* - Search Form hover Effects
 ------------------------------------------------------------- */
 #header-wrap .action-menu {
@@ -1259,7 +1286,6 @@ img.post-image {
 }
 .action-menu .search-bar,
 .action-menu .open-icon-wrap {
-  width: 100%;
   height: 40px;
   background: #efeee8;
   border-radius: 40px;
@@ -1284,6 +1310,7 @@ img.post-image {
   margin: 0;
 }
 #header-wrap .search-box .search-input {
+  width: 250px;
   border: 0;
   margin-bottom: 0;
   font-weight: 300;
@@ -1315,6 +1342,15 @@ img.post-image {
     margin-top: 20px;
     width: 100%;
   }
+}
+
+#search-button {
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+#search-field{
+  border-radius: 12px;
 }
 
 /* - Main Navigation
