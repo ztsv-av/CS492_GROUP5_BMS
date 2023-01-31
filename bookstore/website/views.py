@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Book
 from django.core.paginator import Paginator
 
+
 def index(request):
 
     catalog = list(Book.objects.all())
