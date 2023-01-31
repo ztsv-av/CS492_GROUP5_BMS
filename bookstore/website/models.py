@@ -14,7 +14,7 @@ class User(models.Model):
 
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name + ' ' + self.email
+        return self.first_name + ' ' + self.last_name + ', ' + self.email
 
 
 class Book(models.Model):
@@ -33,9 +33,9 @@ class Book(models.Model):
 
     def __str__(self):
         return (
-            self.title + ' ' + self.description + ' ' + self.author + ' ' + 
-            self.genre + ' ' + self.numPages + ' ' + str(self.available) + ' ' + 
-            self.image + ' ' + self.price + ' ' + str(self.num_available))
+            'Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre + 
+            '; Number of pages: ' + self.numPages + '; Available: ' + str(self.available) + 
+            '; Image: ' + self.image + '; Price: ' + self.price + '; Number of available books ' + str(self.num_available))
 
 class Order(models.Model):
 
@@ -48,6 +48,4 @@ class Order(models.Model):
 
 
     def __str__(self):
-        return str(self.user) + ' ' + str(self.amount) + ' ' + str(self.book.all()).replace('<QuerySet', '').replace('<', '').replace('>', '') + ' ' + str(self.date)
-
-
+        return 'User: ' + str(self.user) + '; Amount: ' + str(self.amount) + '; Books: ' + str(self.book.all()).replace('<QuerySet', '').replace('<', '').replace('>', '') + '; Date: ' + str(self.date)
