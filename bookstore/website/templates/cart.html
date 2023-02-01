@@ -1,120 +1,39 @@
 <!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<title>Cart</title>
-		<meta charset="utf-8">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta name="format-detection" content="telephone=no">
-	    <meta name="apple-mobile-web-app-capable" content="yes">
-	    <meta name="author" content="">
-	    <meta name="keywords" content="">
-	    <meta name="description" content="">
+<html lang="en">
 
-	    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-	    <link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
-	    <link rel="stylesheet" type="text/css" href="css/vendor.css">
-	    <link rel="stylesheet" type="text/css" href="style.css">
-		
-		
-		<link rel="stylesheet" type="text/css" href="cart.css">
-		
-		
-		
-		
-		
-				
-	
-		<!-- script
-		================================================== -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="js/modernizr.js"></script>
-		
-		
-
-	</head>
-
-<body>
-
+{% include 'base/head.html' %}
 
 <div id="header-wrap">
+    {% include 'base/navbar.html' %}
+    {% include 'base/header_home.html' %}
 
-	<div class="top-content">
-		<div class="container">
-			<div class="row">
-				
-				<div class="top-acc-cart">
-					<div class="right-element">
-						<a href="#" class="user-account for-buy"><i class="icon icon-user"></i><span>Account</span></a>
-						<a href="#" class="cart for-buy"><i class="icon icon-clipboard"></i><span><!-- Cart:(0 $) --></span></a>
-
-						<div class="action-menu">
-
-							<div class="search-bar">
-								<a href="#" class="search-button search-toggle" data-selector="#header-wrap">
-									<i class="icon icon-search"></i>
-								</a>
-								<form role="search" method="get" class="search-box">
-									<input class="search-field text search-input" placeholder="Search" type="search">
-								</form>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				
-			</div>
-		</div>
-	</div>
-
-	<header id="header">
-		<div style="height: 35px" class="container">
-			<div class="row">
-
-				
-
-				<div class="nav-cen">
-					
-					<nav id="navbar">
-						<div class="main-menu stellarnav">
-							<ul class="menu-list">
-								<li class="menu-item"><a href="index.html" data-effect="Home">Home</a></li>
-								
-								<li class="menu-item"><a href="shop.html" class="nav-link" data-effect="Shop">Catalog</a></li>
-								
-								<li class="menu-item active"><a href="contact.html" class="nav-link" data-effect="Contact">Contact</a></li>
-							</ul>
-
-							<div class="hamburger">
-								<span class="bar"></span>
-								<span class="bar"></span>
-								<span class="bar"></span>
-							</div>
-
-						</div>
-					</nav>
-
-				</div>
-
-			</div>
-		</div>
-	</header>
-		
 </div>
-	
+
+		
+		
+		
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="page-title">Cart</h1>
 				<div class="breadcrumbs">
-					<span class="item"><a href="index.html">Home /</a></span>
+					<span class="item"><a href="{% url 'index' %}">Home /</a></span>
 					<span class="item">Cart</span>
 				</div>
 			</div>
 		</div>
 	</div>
-</section>
+</section>		
+		
+				
+	
+		
+
+	
+<body>
+
+
 
 
 
@@ -197,10 +116,11 @@
 		</div>
 	  </div>
 
-	  <button class="checkout">Checkout</button>
+	  <button onclick="window.location.href='{% url 'checkout' %}';" class="checkout">Checkout</button>
+	  <!-- <button class="checkout">Checkout</button> -->
 	</div>
 	
-<script type="text/javascript" src="cart.js"></script>
+
 
 </body>
 </html>
