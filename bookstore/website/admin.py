@@ -1,6 +1,6 @@
 import csv
 from django.contrib import admin
-from .models import Book, Order, User
+from .models import Book, Order, User, MfgInventory
 from django.http import HttpResponse
 from django.db import models
 from ast import literal_eval
@@ -46,7 +46,12 @@ class OrderAdmin(admin.ModelAdmin):
 class UserAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'email', 'password', 'phone']
 
+class MfgAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'price', 'available', 'qty_available']
+   
+
 
 admin.site.register(Book, BookAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(User, UserAdmin)
+admin.site.register(MfgInventory, MfgAdmin)
