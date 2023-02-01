@@ -10,4 +10,5 @@ urlpatterns = [
     path('single', views.single, name='single'),
     path('checkout', views.checkout, name='checkout'),
     path('search', views.search, name='search'),
+    path('cart', views.cart, name='cart'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

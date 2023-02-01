@@ -79,3 +79,11 @@ def search(request):
         'search.html', 
         {'books': books}
     )
+
+def cart(request):
+
+    return render(
+        request,
+        'cart.html',
+        {}
+    )
