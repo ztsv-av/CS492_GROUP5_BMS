@@ -46,15 +46,16 @@ def contact(request):
     )
 
 
-def single(request):
+def single(request, book_title):
 
-    book_list = Book.objects.all()
-
+    book = Book.objects.get(title=book_title)
 
     return render(
         request,
-        'single_book.html',
-        {"book_list": book_list}
+        'single.html',
+        {
+            "book": book
+        }
     )
 
 

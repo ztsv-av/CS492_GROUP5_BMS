@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'base/head.html' %}
+
+<div id="header-wrap">
+    {% include 'base/navbar.html' %}
+    {% include 'base/header_home.html' %}
+
+</div>
+
+
+<body>
+
+
+<section class="bg-sand padding-large">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <img src="../{{book.image}}" alt="single_book" style="padding: 5%; background: #EFEEE8; border: 1px solid #EAE8DF">
+            </div>
+
+            <div class="col-md-6 pl-5">
+                <div class="product-detail">
+                    <h1>{{book.title}}</h1>
+                    <h2>{{book.author}}</h2>
+                    <h4>{{book.genre}}</h4>
+
+                    <p style="text-align: justify;">
+                        {{book.description}}
+                    </p>
+
+                    <h2 style="text-align: center;"">${{book.price}}</h2>
+
+                    <button type="submit" name="add-to-cart" value="27545" class="btn btn-full btn-rounded">Add to cart</button>
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% include 'base/footer.html' %}
+
+
+</body>
+</html>

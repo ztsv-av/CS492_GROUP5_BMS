@@ -615,6 +615,9 @@ fieldset[disabled] a.btn {
   width: 100%;
   text-align: center;
 }
+.btn.btn-full:hover {
+  background-color: #aa8d76;
+  }
 /* button with line */
 .btn-with-line {
   color: #fff;
@@ -1243,6 +1246,10 @@ img.post-image {
 
 /* Bookshelf */
 
+.book_day{
+	border: 1px solid #EAE8DF;
+}
+
 .tab-content>.tab-pane {
   display: none;
 }
@@ -1262,7 +1269,7 @@ img.post-image {
 }
 
 .nav-pills .nav-link:hover {
-background-color: #c5a99246;
+background-color: #c5a99257;
 }
 .nav-pills .nav-link.disabled {
 background-color: transparent;
