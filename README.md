@@ -2,6 +2,9 @@
 
 ## Bookstore Management System
 
+Website: https://ctu-bms.gscw.ru/
+Admin area: https://ctu-bms.gscw.ru/admin/
+
 The project is running on Django (Python library). You will need to start it on your local machine in order to be able to edit files, view the changes and push the changes to this repository. Here are the steps that you will need to take to succefully start the virtual environment (**NOTE**: the following is for Windows users. If you have Linux, there might be some differences in command line commands).
 
 1. Git clone this repository to your computer
