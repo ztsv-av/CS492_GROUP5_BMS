@@ -4,17 +4,18 @@ from django.db import models
 class User(models.Model):
 
     # userID = models.CharField('User ID', max_length=10)
-    first_name = models.CharField('User First Name', max_length=30)
-    last_name = models.CharField('User Last Name', max_length=30)
+    username = models.CharField('Username', max_length=30, blank=True, null=True)
     email = models.EmailField('User Email')
     password = models.CharField('User Password', max_length=100)
+    first_name = models.CharField('User First Name', max_length=30)
+    last_name = models.CharField('User Last Name', max_length=30)
     address = models.CharField('User Address', max_length=300)
     zip_code = models.CharField('User Zip Code', max_length=15)
     phone = models.CharField('User Phone', max_length=15)
 
 
     def __str__(self):
-        return self.first_name + ' ' + self.last_name + ', ' + self.email
+        return self.username + ', ' + self.email + ', ' + self.password
 
 
 class Book(models.Model):
