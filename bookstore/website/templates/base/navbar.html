@@ -3,7 +3,12 @@
 		<div class="row">
 			<div class="top-acc-cart">
 				<div class="right-element">
-					<a href="{% url 'login_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Login</span></a>
+					{%if user.is_authenticated%}
+						<a href="{% url 'logout_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Logout</span></a>
+					{%else%}
+						<a href="{% url 'login_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Login</span></a>
+					{%endif%}
+
 					<a href="{% url 'cart' %}" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart:(0 $)</span></a>
 					<div class="action-menu">
 						<div class="search-bar">
