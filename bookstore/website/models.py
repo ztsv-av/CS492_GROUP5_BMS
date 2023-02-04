@@ -15,7 +15,7 @@ class User(models.Model):
 
 
     def __str__(self):
-        return self.username + ', ' + self.email + ', ' + self.password
+        return str(self.username) + ', ' + self.password + ', ' + self.email + ', ' + self.phone
 
 
 class Book(models.Model):

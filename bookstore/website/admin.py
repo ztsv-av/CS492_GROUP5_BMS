@@ -44,7 +44,8 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['first_name', 'last_name', 'email', 'password', 'phone']
+    list_display = ['username', 'password', 'email', 'phone']
+
 
 class MfgAdmin(admin.ModelAdmin):
     list_display = ['title', 'author', 'price', 'available', 'qty_available']
