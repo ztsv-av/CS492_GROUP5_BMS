@@ -6,6 +6,7 @@
 					{%if user.is_authenticated%}
 						<a href="{% url 'logout_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Logout</span></a>
 					{%else%}
+						<a href="{% url 'register_user' %}" class="user-account for-buy"><i class="fa-regular fa-address-card" style="margin-right:2px;"></i><span>Register</span></a>
 						<a href="{% url 'login_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Login</span></a>
 					{%endif%}
 
