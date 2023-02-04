@@ -1991,6 +1991,11 @@ footer#footer {
     width: 100%;
   }
 }
+#b-d{
+  object-fit:contain;
+  width: 65%;
+  margin: 0 auto;
+}
 
 /* Alerts */
 .alert{margin-top:3%;position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}
