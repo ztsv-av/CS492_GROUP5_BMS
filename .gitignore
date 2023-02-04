@@ -4,3 +4,4 @@ bookstore/website/migrations/__pycache__/*
 bookstore/website/__pycache__/*
 bookstore/members/__pycache__/*
 bookstore/members/migrations/__pycache__/*
+bookstore/db.sqlite3
