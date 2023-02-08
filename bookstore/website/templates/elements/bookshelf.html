@@ -12,13 +12,13 @@
 					<a class="nav-link mb-sm-3 mb-md-0 active" id="all-genre-tab" data-bs-toggle="tab" href="#all-genre" role="tab" aria-controls="all-genre" aria-selected="true">All Genre</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link mb-sm-3 mb-md-0" id="fantasy-tab" data-bs-toggle="tab" href="#fantasy" role="tab" aria-controls="fantasy" aria-selected="false">Fantasy</a>
+					<a class="nav-link mb-sm-3 mb-md-0" id="nonfiction-tab" data-bs-toggle="tab" href="#nonfiction" role="tab" aria-controls="nonfiction" aria-selected="false">Nonfiction</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link mb-sm-3 mb-md-0" id="technology-tab" data-bs-toggle="tab" href="#technology" role="tab" aria-controls="technology" aria-selected="false">Technology</a>
+					<a class="nav-link mb-sm-3 mb-md-0" id="manga-tab" data-bs-toggle="tab" href="#manga" role="tab" aria-controls="manga" aria-selected="false">Manga</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link mb-sm-3 mb-md-0" id="romantic-tab" data-bs-toggle="tab" href="#romantic" role="tab" aria-controls="romantic" aria-selected="false">Romantic</a>
+					<a class="nav-link mb-sm-3 mb-md-0" id="horror-tab" data-bs-toggle="tab" href="#horror" role="tab" aria-controls="horror" aria-selected="false">Horror</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link mb-sm-3 mb-md-0" id="adventure-tab" data-bs-toggle="tab" href="#adventure" role="tab" aria-controls="adventure" aria-selected="false">Adventure</a>
@@ -76,27 +76,23 @@
 
 				</div>
 
-				<div class="tab-pane fade" id="fantasy" role="tabpanel" aria-labelledby="fantasy-tab">
+				<div class="tab-pane fade" id="nonfiction" role="tabpanel" aria-labelledby="nonfiction-tab">
 					
 					<div class="row">
 
-						{% for book in catalog|slice:"4:8" %}
+						{% for book in nonfiction_catalog|slice:"0:4" %}
 
-							{% if 'fantasy' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -104,23 +100,19 @@
 
 					<div class="row">
 
-						{% for book in catalog|slice:"0:4" %}
+						{% for book in nonfiction_catalog|slice:"4:8" %}
 
-							{% if 'fantasy' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -128,51 +120,43 @@
 
 				</div>
 
-				<div class="tab-pane fade" id="technology" role="tabpanel" aria-labelledby="technology-tab">
+				<div class="tab-pane fade" id="manga" role="tabpanel" aria-labelledby="manga-tab">
 					
 					<div class="row">
 
-						{% for book in catalog|slice:"0:4" %}
+						{% for book in manga_catalog|slice:"0:4" %}
 
-							{% if 'technology' in book.genre %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
-					
 						{% endfor %}
 
 					</div>
 
 					<div class="row">
 
-						{% for book in catalog|slice:"4:8" %}
+						{% for book in manga_catalog|slice:"4:8" %}
 
-							{% if 'technology' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -180,27 +164,23 @@
 
 				</div>
 
-				<div class="tab-pane fade" id="romantic" role="tabpanel" aria-labelledby="romantic-tab">
+				<div class="tab-pane fade" id="horror" role="tabpanel" aria-labelledby="horror-tab">
 					
 					<div class="row">
 
-						{% for book in catalog|slice:"4:8" %}
+						{% for book in horror_catalog|slice:"0:4" %}
 
-							{% if 'romantic' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -208,23 +188,19 @@
 
 					<div class="row">
 
-						{% for book in catalog|slice:"0:4" %}
+						{% for book in horror_catalog|slice:"4:8" %}
 
-							{% if 'romantic' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -236,23 +212,19 @@
 					
 					<div class="row">
 
-						{% for book in catalog|slice:"0:4" %}
+						{% for book in adventure_catalog|slice:"0:4" %}
 
-							{% if 'adventure' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -260,23 +232,19 @@
 
 					<div class="row">
 
-						{% for book in catalog|slice:"4:8" %}
+						{% for book in adventure_catalog|slice:"4:8" %}
 
-							{% if 'adventure' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -288,23 +256,19 @@
 
 					<div class="row">
 
-						{% for book in catalog|slice:"4:8" %}
+						{% for book in fiction_catalog|slice:"0:4" %}
 
-							{% if 'fiction' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 
@@ -312,23 +276,19 @@
 
 					<div class="row">
 
-						{% for book in catalog|slice:"0:4" %}
+						{% for book in fiction_catalog|slice:"4:8" %}
 
-							{% if 'fiction' in book.genre %}
-
-								<div class="col-md-3">
-									<figure class="product-style">
-										<img src="{{book.image}}" alt="Books" class="product-item">
-										<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
-										<figcaption>
-											<h3>{{book.title}}</h3>
-											<p>{{book.author}}</p>
-											<div class="item-price">$ {{book.price}}</div>
-										</figcaption>
-									</figure>
-								</div>
-
-							{% endif %}
+							<div class="col-md-3">
+								<figure class="product-style">
+									<img src="{{book.image}}" alt="Books" class="product-item">
+									<a href="{% url 'single' book.title %}"><button type="button" class="add-to-cart" data-product-tile="add-to-cart">Read More</button></a>
+									<figcaption>
+										<h3>{{book.title}}</h3>
+										<p>{{book.author}}</p>
+										<div class="item-price">$ {{book.price}}</div>
+									</figcaption>
+								</figure>
+							</div>
 					
 						{% endfor %}
 

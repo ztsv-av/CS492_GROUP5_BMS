@@ -7,6 +7,11 @@ from django.core.paginator import Paginator
 def index(request):
 
     catalog = list(Book.objects.all())
+    nonfiction_catalog = Book.objects.filter(genre__icontains="Nonfiction")
+    manga_catalog = Book.objects.filter(genre__icontains="Manga")
+    horror_catalog = Book.objects.filter(genre__icontains="Horror")
+    adventure_catalog = Book.objects.filter(genre__icontains="Adventure")
+    fiction_catalog = Book.objects.filter(genre__icontains="Fiction")
     random.shuffle(catalog)
     
     book_of_day = random.choice(catalog)
@@ -16,6 +21,11 @@ def index(request):
         'index.html',
         {
             'book_of_day': book_of_day,
+            'nonfiction_catalog': nonfiction_catalog,
+            'manga_catalog': manga_catalog,
+            'horror_catalog': horror_catalog,
+            'adventure_catalog': adventure_catalog,
+            'fiction_catalog': fiction_catalog,
             'catalog': catalog}
     )
 
