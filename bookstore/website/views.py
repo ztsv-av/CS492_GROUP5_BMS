@@ -23,7 +23,7 @@ def index(request):
 def catalog(request):
     
     # Set up Pagination
-    p = Paginator(Book.objects.all(), 3)
+    p = Paginator(Book.objects.all(), 6)
     page = request.GET.get('page')
     books = p.get_page(page)
 
