@@ -35,7 +35,7 @@ get_sales_record.short_description = 'Create Sales Record'
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'price', 'available', 'num_available']
+    list_display = ['title', 'author', 'price', 'available', 'quantity']
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -48,9 +48,8 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class MfgAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'price', 'available', 'qty_available']
+    list_display = ['title', 'author', 'price', 'available', 'quantity']
    
-
 
 admin.site.register(Book, BookAdmin)
 admin.site.register(Order, OrderAdmin)

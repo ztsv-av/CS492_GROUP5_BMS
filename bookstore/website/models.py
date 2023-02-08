@@ -29,14 +29,14 @@ class Book(models.Model):
     available = models.BooleanField('Book Available')
     image = models.CharField('Book Image Path', max_length=100)
     price = models.CharField('Book Price', max_length=100)
-    num_available = models.CharField('Number of Available Books', max_length=10, blank=True, null=True)
+    quantity = models.CharField('Number of Available Books', max_length=10, blank=True, null=True)
 
 
     def __str__(self):
         return (
             'Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre + 
             '; Number of pages: ' + self.numPages + '; Available: ' + str(self.available) + 
-            '; Image: ' + self.image + '; Price: ' + self.price + '; Number of available books ' + str(self.num_available))
+            '; Image: ' + self.image + '; Price: ' + self.price + '; Number of available books ' + str(self.quantity))
 
 class Order(models.Model):
 
@@ -54,16 +54,15 @@ class Order(models.Model):
 
 class MfgInventory(models.Model):
 
-    
+    # book = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
     title = models.CharField('Book Title', max_length=100)
     author = models.CharField('Book Author', max_length=100)
     genre = models.CharField('Book Genre/s', max_length=100)
     available = models.BooleanField('Book Available')
-    image = models.CharField('Book Image Path', max_length=100)
     price = models.CharField('Book Price', max_length=100)
-    qty_available = models.CharField('Qty in Inventory', max_length=10, blank=True, null=True)
+    quantity = models.CharField('Quantity in Inventory', max_length=10, blank=True, null=True)
 
     def __str__(self):
 
-        return ('Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre + '; Available: ' + str(self.available) +
-                '; Imgage:' + self.image + '; Price: ' + self.price + '; Qty: ' + str(self.qty_available)) 
+        return ('Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre +
+        '; Available: ' + str(self.available) +'; Price: ' + self.price + '; Quantity: ' + str(self.quantity)) 
