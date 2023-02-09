@@ -63,7 +63,7 @@ def update_cart(request, book_id, action):
 @login_required
 def checkout(request):
     
-    return render(request, 'cart/checkout.html')
+    return render(request, 'checkout.html')
 
 
 def hx_menu_cart(request):
