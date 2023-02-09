@@ -34,7 +34,7 @@ class Book(models.Model):
 
     def __str__(self):
         return (
-            'Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre + 
+            'id: ' + self.id + '; Title: ' + self.title + '; Author: ' + self.author + '; Genre: ' + self.genre + 
             '; Number of pages: ' + self.numPages + '; Available: ' + str(self.available) + 
             '; Image: ' + self.image + '; Price: ' + self.price + '; Number of available books ' + str(self.quantity))
 
