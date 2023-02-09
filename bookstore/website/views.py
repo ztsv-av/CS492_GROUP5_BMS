@@ -47,15 +47,6 @@ def catalog(request):
     )
 
 
-def contact(request):
-
-    return render(
-        request,
-        'contact.html',
-        {}
-    )
-
-
 def single(request, book_title):
 
     book = Book.objects.get(title=book_title)
@@ -96,5 +87,14 @@ def cart(request):
     return render(
         request,
         'cart.html',
+        {}
+    )
+
+
+def contact(request):
+
+    return render(
+        request,
+        'contact.html',
         {}
     )

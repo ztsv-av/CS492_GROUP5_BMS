@@ -7,5 +7,4 @@ class WebsiteConfig(AppConfig):
 
     def ready(self):
         from time_jobs import updater
-        updater.start_books()
-        updater.start_mfg()
+        updater.start_scheduler()

@@ -3,13 +3,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from .jobs import *
 
 
-def start_books():
-	scheduler = BackgroundScheduler()
-	scheduler.add_job(check_book, 'interval', seconds=86400)
-	scheduler.start()
+scheduler = BackgroundScheduler()
+scheduler.add_job(check_book, 'interval', seconds=86400)
+scheduler.add_job(check_mfg, 'interval', seconds=86400)
 
 
-def start_mfg():
-	scheduler = BackgroundScheduler()
-	scheduler.add_job(check_mfg, 'interval', seconds=86400)
+def start_scheduler():
 	scheduler.start()
