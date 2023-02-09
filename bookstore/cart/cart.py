@@ -21,7 +21,7 @@ class Cart(object):
             self.cart[str(b)]['book'] = Book.objects.get(pk=b)
 
         for item in self.cart.values():
-            item['total_price'] = int(item['book'].price) * int(item['quantity'])
+            item['total_price'] = float(item['book'].price) * int(item['quantity'])
 
             yield item
     
@@ -63,7 +63,7 @@ class Cart(object):
 
     def get_subtotal(self):
 
-        return sum(int(item['total_price']) for item in self.cart.values())
+        return sum(item['total_price'] for item in self.cart.values())
 
 
     def get_percent(self):
@@ -78,12 +78,7 @@ class Cart(object):
 
     def get_total_cost(self):
 
-        for p in self.cart.keys():
-            self.cart[str(p)]['book'] = Book.objects.get(pk=p)
-        
-        total = sum(int(item['book'].price) * int(item['quantity']) for item in self.cart.values())
-
-        return total
+        return sum(float(item['total_price']) for item in self.cart.values())
     
 
     def get_item(self, book_id):

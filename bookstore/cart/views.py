@@ -60,7 +60,7 @@ def update_cart(request, book_id, action):
     return response
 
 
-# @login_required
+@login_required
 def checkout(request):
     
     return render(request, 'checkout.html')
