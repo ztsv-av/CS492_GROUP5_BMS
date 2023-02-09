@@ -6,3 +6,5 @@ bookstore/members/__pycache__/*
 bookstore/members/migrations/__pycache__/
 bookstore/time_jobs/__pycache__/**
 bookstore/db.sqlite3
+bookstore/cart/__pycache__/*
+bookstore/cart/migrations/__pycache__/*
