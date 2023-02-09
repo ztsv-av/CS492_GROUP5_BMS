@@ -37,7 +37,7 @@ def update_cart(request, book_id, action):
 
     item = {
         'book': {
-            'bookID': book.id,
+            'id': book.id,
             'title': book.title,
             'image': book.image,
             'description': book.description,
