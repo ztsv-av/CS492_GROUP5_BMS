@@ -21,7 +21,7 @@ class Cart(object):
             self.cart[str(b)]['book'] = Book.objects.get(pk=b)
 
         for item in self.cart.values():
-            item['total_price'] = float(item['book'].price) * int(item['quantity'])
+            item['total_price'] = round(float(item['book'].price) * int(item['quantity']), 2)
 
             yield item
     
@@ -78,7 +78,10 @@ class Cart(object):
 
     def get_total_cost(self):
 
-        return sum(float(item['total_price']) for item in self.cart.values())
+        for b in self.cart.keys():
+            self.cart[str(b)]['book'] = Book.objects.get(pk=b)
+
+        return round(sum(float(item['book'].price) * int(item['quantity']) for item in self.cart.values()), 2)
     
 
     def get_item(self, book_id):
