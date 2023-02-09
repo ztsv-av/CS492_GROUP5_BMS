@@ -60,14 +60,6 @@ def single(request, book_title):
     )
 
 
-def checkout(request):
-
-    return render(
-        request,
-        'checkout.html',
-        {}
-    )
-
 def search(request):
 
     query = request.GET.get('q')
@@ -80,14 +72,6 @@ def search(request):
         request, 
         'search.html', 
         {'books': books}
-    )
-
-def cart(request):
-
-    return render(
-        request,
-        'cart.html',
-        {}
     )
 
 
