@@ -30,29 +30,29 @@ def update_cart(request, book_id, action):
         cart.add(book_id, -1, True)
     
     book = Book.objects.get(pk=book_id)
-    quantity = cart.get_item(book_id)
+    quantity = cart.get_item(book_id)['quantity']
     
-    if quantity:
-        quantity = quantity['quantity']
+    # if quantity:
+    #     quantity = quantity['quantity']
 
-        item = {
-            'book': {
-                'bookID': book.bookID,
-                'title': book.title,
-                'image': book.image,
-                'description': book.description,
-                'genre': book.genre,
-                'price': book.price,
-            },
-            'total_price': (int(quantity) * int(book.price)),
-            'quantity': int(quantity),
-        }
-    else:
-        item = None
+    item = {
+        'book': {
+            'bookID': book.id,
+            'title': book.title,
+            'image': book.image,
+            'description': book.description,
+            'genre': book.genre,
+            'price': book.price,
+        },
+        'total_price': round(float(book.price) * int(quantity), 2),
+        'quantity': int(quantity),
+    }
+    # else:
+    #     item = None
 
     response = render(
         request, 
-        'cart/cart_item.html',
+        'cart_item.html',
         {'item': item}
     )
     response['HX-Trigger'] = 'update-menu-cart'
@@ -67,9 +67,9 @@ def checkout(request):
 
 
 def hx_menu_cart(request):
-    return render(request, 'cart/menu_cart.html')
+    return render(request, 'menu_cart.html')
 
 
 def hx_cart_total(request):
-    return render(request, 'cart/cart_total.html')
+    return render(request, 'cart_total.html')
 

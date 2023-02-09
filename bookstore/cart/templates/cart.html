@@ -32,27 +32,7 @@
 
         {% for item in cart %}
 
-            <div class="product mb-6 flex pr-6">
-                <a href="#" class="w-1/4">
-                    <img src="../../website/{{item.book.image}}" class="product-item">
-                </a>
-
-                <div class="w-3/4 pl-6">
-                    <div class="flex justify-between">
-                        <a href="#" class="text-lg">{{item.book.title}}</a>
-
-                        <span class="mb-6 pt-1 text-gray-400">{{item.total_price}}</span>
-                    </div>
-
-                    <hr>
-
-                    <div class="quantity mt-6 flex items-center space-x-4">
-                        <a href="#" class="p-3 bg-gray-100">-</a>
-                        <span>{{item.quantity}}</span>
-                        <a href="#" class="p-3 bg-gray-100">+</a>
-                    </div>
-                </div>
-            </div>
+            {% include 'cart_item.html' %}
 
         {% endfor %}
 
@@ -62,7 +42,13 @@
 
         <div class="mb-6 flex justify-between">
             <span class="font-semibold">Total</span>
-            <span>{{cart.get_total_cost}}</span>
+            <span
+                hx-get="{% url 'hx_cart_total' %}"
+                hx-trigger="update-menu-cart from:body"
+                hx-swap="innerHTML"
+            >
+                {%include 'cart_total.html'%}
+            </span>
         </div>
 
         <a href="{% url 'checkout' %}" class="inline-block px-8 py-4 rounded-xl bg-purple-500 hover:bg-purple-700 text-white">Checkout</a>
