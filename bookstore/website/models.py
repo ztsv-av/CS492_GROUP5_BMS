@@ -20,7 +20,7 @@ class User(models.Model):
 
 class Book(models.Model):
 
-    # bookID = models.CharField('Book ID', max_length=10)
+    bookID = models.CharField('Book ID', max_length=10, blank=True, null=True)
     title = models.CharField('Book Title', max_length=100)
     description = models.TextField(blank=True, max_length=1000)
     author = models.CharField('Book Author', max_length=100)

@@ -33,7 +33,15 @@
 
                     <h2 style="text-align: center;"">${{book.price}}</h2>
 
-                    <button type="submit" name="add-to-cart" value="27545" class="btn btn-full btn-rounded">Add to cart</button>
+                    <a 
+                        style="text-decoration: none"
+                        href="#"
+                        hx-get="{%url 'add_to_cart' book.id%}"
+                        hx-target="#menu-cart-button"
+                        hx-swap="outerHTML"
+                    >
+                        <button type="submit" name="add-to-cart" value="27545" class="btn btn-full btn-rounded">Add to cart</button>
+                    </a>
                     
                 </div>
             </div>
@@ -45,6 +53,7 @@
 
 {% include 'base/footer.html' %}
 
+{% include 'base/scripts.html' %}
 
 </body>
 </html>
