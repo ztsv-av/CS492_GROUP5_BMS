@@ -11,13 +11,13 @@ def add_to_cart(request, book_id):
 
     return render(
         request,
-        'cart/menu_cart.html'
+        'menu_cart.html'
     )
 
 
 def cart(request):
 
-    return render(request, 'cart/cart.html')
+    return render(request, 'cart.html')
 
 
 def update_cart(request, book_id, action):
