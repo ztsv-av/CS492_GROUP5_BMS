@@ -30,25 +30,25 @@ def update_cart(request, book_id, action):
         cart.add(book_id, -1, True)
     
     book = Book.objects.get(pk=book_id)
-    quantity = cart.get_item(book_id)['quantity']
+    quantity = cart.get_item(book_id)
     
-    # if quantity:
-    #     quantity = quantity['quantity']
+    if quantity:
+        quantity = quantity['quantity']
 
-    item = {
-        'book': {
-            'id': book.id,
-            'title': book.title,
-            'image': book.image,
-            'description': book.description,
-            'genre': book.genre,
-            'price': book.price,
-        },
-        'total_price': round(float(book.price) * int(quantity), 2),
-        'quantity': int(quantity),
-    }
-    # else:
-    #     item = None
+        item = {
+            'book': {
+                'id': book.id,
+                'title': book.title,
+                'image': book.image,
+                'description': book.description,
+                'genre': book.genre,
+                'price': book.price,
+            },
+            'total_price': round(float(book.price) * int(quantity), 2),
+            'quantity': int(quantity),
+        }
+    else:
+        item = None
 
     response = render(
         request, 

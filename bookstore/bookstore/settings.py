@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'members',
     'cart',
     'time_jobs',
+    'order',
 ]
 
 MIDDLEWARE = [

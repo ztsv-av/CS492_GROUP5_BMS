@@ -86,9 +86,7 @@ class Cart(object):
 
     def get_item(self, book_id):
 
-        return self.cart[str(book_id)]
-
-        # if str(book_id in self.cart):
-        #     return self.cart[str(book_id)]
-        # else:
-        #     return None
+        if str(book_id) in self.cart:
+            return self.cart[str(book_id)]
+        else:
+            return None

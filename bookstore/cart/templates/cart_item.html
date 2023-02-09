@@ -1,3 +1,4 @@
+{% if item %}
 <div class="product mb-6 flex pr-6" id="cart-item-{{item.book.id}}">
     <a href="#" class="w-1/4">
         <img src="../../website/{{item.book.image}}" class="product-item">
@@ -29,3 +30,4 @@
         </div>
     </div>
 </div>
+{% endif %}

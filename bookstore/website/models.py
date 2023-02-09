@@ -38,19 +38,6 @@ class Book(models.Model):
             '; Number of pages: ' + self.numPages + '; Available: ' + str(self.available) + 
             '; Image: ' + self.image + '; Price: ' + self.price + '; Number of available books ' + str(self.quantity))
 
-class Order(models.Model):
-
-    # orderID = models.CharField('Order ID', max_length=10)
-    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
-    book = models.ManyToManyField(Book, blank=True)
-    amount = models.CharField('Order Amount', max_length=10, blank=True, null=True,)
-    date = models.DateTimeField('Order Date')
-    successful = models.BooleanField('Order Successful')
-
-
-    def __str__(self):
-        return 'User: ' + str(self.user) + '; Amount: ' + str(self.amount) + '; Books: ' + str(self.book.all()).replace('<QuerySet', '').replace('<', '').replace('>', '') + '; Date: ' + str(self.date)
-
 
 class MfgInventory(models.Model):
 
