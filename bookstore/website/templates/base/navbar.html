@@ -10,13 +10,7 @@
 						<a href="{% url 'login_user' %}" class="user-account for-buy"><i class="icon icon-user"></i><span>Login</span></a>
 					{%endif%}
 
-                    <div
-                        hx-get="{% url 'hx_menu_cart' %}"
-                        hx-trigger="update-menu-cart from:body"
-                        hx-swap="innerHTML"
-                    >
-						{% include 'menu_cart.html' %}
-					</div>
+					{% include 'menu_cart.html' %}
 
 					<div class="action-menu">
 						<div class="search-bar">

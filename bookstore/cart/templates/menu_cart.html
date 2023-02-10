@@ -1,1 +1,1 @@
-<a href="{% url 'cart' %}" id='menu-cart-button' class="cart for-buy"><i class="icon icon-clipboard"></i><span>{{cart|length}}</span></a>
+<a href="{% url 'cart' %}" id='menu-cart-button' class="cart for-buy" hx-get="{% url 'hx_menu_cart' %}" hx-trigger="update-menu-cart from:body" hx-swap="innerHTML"><i class="icon icon-clipboard"></i><span><b><sup>{{cart|length}}</sup></b></span></a>

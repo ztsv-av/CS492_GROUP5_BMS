@@ -68,15 +68,6 @@
 }
 
 /* Body/Header stuff */
-body {
-  padding: 0px 30px 30px 20px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-}
-
-label {
-  color: #aaa;
-}
 
 .shopping-cart {
   margin-top: -45px;
@@ -95,8 +86,8 @@ label {
 /* Product entries */
 .product {
   margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 3em;
+  border-bottom: 1px solid #E1E1E1;
 }
 .product .product-image {
   /* margin-left: 100px; */
