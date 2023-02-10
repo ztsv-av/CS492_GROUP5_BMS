@@ -5,5 +5,5 @@ from .jobs import *
 
 def start_scheduler():
 	scheduler = BackgroundScheduler()
-	scheduler.add_job(check_book, 'interval', seconds=10)
+	scheduler.add_job(check_book, 'interval', seconds=90)
 	scheduler.start()

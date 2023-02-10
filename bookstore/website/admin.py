@@ -15,7 +15,7 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class MfgAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'price', 'available', 'quantity']
+    list_display = ['id', 'title', 'author', 'price', 'available', 'quantity']
    
 
 admin.site.register(Book, BookAdmin)

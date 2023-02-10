@@ -41,7 +41,7 @@ class Book(models.Model):
 
 class MfgInventory(models.Model):
 
-    # book = models.ForeignKey(Book, blank=True, null=True, on_delete=models.CASCADE)
+    id = models.CharField('Book ID', max_length=10, primary_key=True)
     title = models.CharField('Book Title', max_length=100)
     author = models.CharField('Book Author', max_length=100)
     genre = models.CharField('Book Genre/s', max_length=100)
