@@ -2027,7 +2027,16 @@ footer#footer {
   margin-top:2%;
 }
 
-/* .rounded{border-radius:.25rem!important}
-.shadow{margin-right:3%;box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important}
-.p-4{padding:1.5rem!important}
-.mb-5,.my-5{margin-bottom:3rem!important} */
+/* .product .remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.product .remove-product:hover {
+  background-color: #a44;
+} */

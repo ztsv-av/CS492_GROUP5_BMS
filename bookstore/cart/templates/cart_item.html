@@ -1,33 +1,40 @@
 {% if item %}
-<div class="product mb-6 flex pr-6" id="cart-item-{{item.book.id}}">
-    <a href="#" class="w-1/4">
-        <img src="../../website/{{item.book.image}}" class="product-item">
-    </a>
+<div class="product" id="cart-item-{{item.book.id}}" style="margin-top:6em">
 
-    <div class="w-3/4 pl-6">
-        <div class="flex justify-between">
-            <a href="#" class="text-lg">{{item.book.title}}</a>
-
-            <span class="mb-6 pt-1 text-gray-400">{{item.total_price}}</span>
-        </div>
-
-        <hr>
-
-        <div class="quantity mt-6 flex items-center space-x-4">
-            <a 
-                style="cursor: pointer;"
-                hx-get="{%url 'update_cart' item.book.id 'decrement'%}"
-                hx-target="#cart-item-{{item.book.id}}"
-                hx-swap="outerHTML"
-            > - </a>
-            <span>{{item.quantity}}</span>
-            <a
-                style="cursor: pointer;"
-                hx-get="{%url 'update_cart' item.book.id 'increment'%}"
-                hx-target="#cart-item-{{item.book.id}}"
-                hx-swap="outerHTML"
-            > + </a>
-        </div>
+    <div class="product-image">
+        <a href="{% url 'single' item.book.title %}" class="w-1/4">
+            <img src="../../website/{{item.book.image}}" class="product-image">
+        </a>
     </div>
+
+    <div class="product-title">
+        <a href="{% url 'single' item.book.title %}" class="text-lg">{{item.book.title}}</a>
+    </div>
+
+    <div class="product-price">{{item.total_price}}</div>
+
+    <div class="product-quantity">
+        <a 
+            style="cursor: pointer;"
+            hx-get="{%url 'update_cart' item.book.id 'decrement'%}"
+            hx-target="#cart-item-{{item.book.id}}"
+            hx-swap="outerHTML"
+        > - </a>
+        <span>{{item.quantity}}</span>
+        <a
+            style="cursor: pointer;"
+            hx-get="{%url 'update_cart' item.book.id 'increment'%}"
+            hx-target="#cart-item-{{item.book.id}}"
+            hx-swap="outerHTML"
+        > + </a>
+    </div>
+
+    <!-- <div class="product-removal">
+        <button class="remove-product">
+        Remove
+        </button>
+    </div> -->
+
 </div>
+
 {% endif %}

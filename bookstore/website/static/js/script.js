@@ -138,3 +138,18 @@
 
 
 })(jQuery);
+
+// $('.product-removal button').click(function() {
+//   removeItem(this);
+// });
+
+// /* Remove item from cart */
+// function removeItem(removeButton)
+// {
+//   /* Remove row from DOM and recalc cart total */
+//   var productRow = $(removeButton).parent();
+//   productRow.slideUp(fadeTime, function() {
+//     productRow.remove();
+//     recalculateCart();
+//   });
+// }
