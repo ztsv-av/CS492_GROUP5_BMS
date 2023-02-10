@@ -38,3 +38,4 @@ def check_mfg():
             book.save()
 
             print('Book ' + book.title + ' is unavailable from the manufacturer!')
+            
