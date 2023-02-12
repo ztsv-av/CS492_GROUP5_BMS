@@ -1,17 +1,10 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-e6-4954ws*fc0t^hg49ey=_#9)qbp6me*9%j7g71^r=o6!onx='
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['ctu-bms.gscw.ru', 'localhost']
@@ -19,8 +12,6 @@ ALLOWED_HOSTS = ['ctu-bms.gscw.ru', 'localhost']
 SESSION_COOCKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 LOGIN_URL = 'login_user'
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
