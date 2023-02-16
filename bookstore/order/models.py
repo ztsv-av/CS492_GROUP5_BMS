@@ -25,7 +25,7 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     paid = models.BooleanField(default=False)
-    paid_amount = models.IntegerField(blank=True, null=True)
+    paid_amount = models.FloatField(blank=True, null=True)
 
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=ORDERED)
 
